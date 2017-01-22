@@ -1,0 +1,16 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+{% block menu_calendar %}active{% endblock %}
+
+{% block contents %}
+    <section>
+        <div class="container">
+            <h3>Liste des séries</h3>
+            <div class="row">
+                {% for episode in episodes %}
+                        <h4>{{ episode.date|date("d/m/Y") }} {{ episode.name }}</h4>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}
